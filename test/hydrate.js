@@ -32,7 +32,7 @@ describe('POST /hydrate API endpoint', function() {
       var body =res.body;
       body.should.have.property('raw');
       body.should.have.property('html');
-      body.should.have.property('created');
+      body.should.have.property('content-encoding');
 
       done();
     });
