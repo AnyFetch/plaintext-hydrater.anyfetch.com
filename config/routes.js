@@ -1,7 +1,7 @@
 // # config/routes
 
 // Routes client requests to handlers
-module.exports = function router (server, handlers) {
+module.exports = function router (server, lib) {
   'use strict';  
-  server.get('/hydrate', handlers.hydrate.execute);
+  server.post('/hydrate', lib.hydrate);
 };
