@@ -27,7 +27,9 @@ describe('POST /hydrate API endpoint', function() {
     request(app).post('/hydrate')
       .attach('file', __filename)
       .expect('Content-Type', /json/)
-      .end(function(err, res, body) {
+      .expect(200)
+      .end(function(err, res) {
+      var body =res.body;
       body.should.have.property('raw');
       body.should.have.property('html');
       body.should.have.property('created');

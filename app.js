@@ -1,11 +1,11 @@
 'use strict';
 
 // Load configuration and initialize server
-var restify       = require('restify'),
-    configuration = require('./config/configuration.js'),
-    lib           = require("./lib/hydrater-tika"),
-    handlers      = lib.handlers,
-    server        = restify.createServer();
+var restify = require('restify');
+var configuration = require('./config/configuration.js');
+var lib = require("./lib/hydrater-tika");
+var handlers = lib.handlers;
+var server = restify.createServer();
 
 
 // Middleware Goes Here
