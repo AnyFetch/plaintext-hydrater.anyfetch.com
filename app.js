@@ -4,6 +4,7 @@
 var restify       = require('restify'),
     configuration = require('./config/configuration.js'),
     lib           = require("./lib/hydrater-tika"),
+    handlers      = lib.handlers,
     server        = restify.createServer();
 
 
@@ -13,7 +14,7 @@ server.use(restify.queryParser());
 server.use(restify.bodyParser());
 
 // Load routes
-require("./config/routes.js")(server, lib);
+require("./config/routes.js")(server, handlers);
 
 // Expose the server
 module.exports = server;
