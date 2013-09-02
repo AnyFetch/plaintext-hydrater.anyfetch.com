@@ -1,5 +1,4 @@
 {
-  "sha": "675273b0a9ee59e3417113723585ce6686b792b6",
   "sources": {
     "apt": {
       "locked_version": "2.1.0"
