@@ -16,7 +16,6 @@ describe('POST /hydrate API endpoint', function() {
   });
 
   it('should accept request with a file attached', function(done) {
-    
     request(app).post('/hydrate')
       .attach('file', __filename)
       .expect(200)
