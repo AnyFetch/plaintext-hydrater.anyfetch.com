@@ -4,7 +4,7 @@
 # TODO: use our recipe for tika
 $script = <<SCRIPT
 cd /vagrant; npm install
-sudo wget -P /etc/ -O tika-1.4 http://repo1.maven.org/maven2/org/apache/tika/tika-app/1.4/tika-app-1.4.jar
+sudo wget -O /etc/tika-1.4 http://repo1.maven.org/maven2/org/apache/tika/tika-app/1.4/tika-app-1.4.jar
 echo Tika rocks like the Rolling Stones rock the stage ...
 SCRIPT
 
