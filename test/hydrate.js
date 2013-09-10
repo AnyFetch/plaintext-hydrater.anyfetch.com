@@ -7,21 +7,31 @@ var async = require('async');
 var app = require('../app.js');
 var config = require('../config/configuration.js');
 
-
 describe('POST /hydrate API endpoint', function() {
-  it('should refuse every request without a file', function(done) {
+  it('should refuse request without metadatas', function(done) {
     request(app).post('/hydrate')
+      .send({'file_path': 'http://example.org/file'})
       .expect(405)
       .end(done);
   });
 
-  it('should accept request with a file attached', function(done) {
+  it('should refuse request without file_path', function(done) {
     request(app).post('/hydrate')
-      .attach('file', __filename)
-      .expect(200)
-      .end(function(err, res) {
-        done();
-      });
+      .send({'metadatas': 'http://example.org/file'})
+      .expect(405)
+      .end(done);
+  });
+
+  it('should immediately return 204', function(done) {
+    this.timeout(500);
+    request(app)
+      .post('/hydrate')
+      .send({
+        'metadatas': {},
+        'file_path': 'http://example.org/file'
+      })
+      .expect(204)
+      .end(done);
   });
 
   it('should respond with the correct informations', function(done) {
