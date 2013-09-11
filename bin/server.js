@@ -3,8 +3,8 @@
 // Launch a node app
 
 // Load configuration
-var configuration = require("../config/configuration.js"),
-    server = require('../app.js');
+var configuration = require("../config/configuration.js");
+var server = require('../app.js');
 
 // Start the server
 server.listen(configuration.port, function() {
