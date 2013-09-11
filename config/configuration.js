@@ -7,7 +7,7 @@ var node_env = process.env.NODE_ENV || "development";
 var default_port = 8000;
 
 var default_tika_version = '1.4';
-var default_tika_path = "/etc/tika-" + default_tika_version + "tika-app-" + default_tika_version + ".jar";
+var default_tika_path = "/etc/tika-" + default_tika_version + "/tika-app-" + default_tika_version + ".jar";
 
 if(node_env === "production") {
   default_port = 80;

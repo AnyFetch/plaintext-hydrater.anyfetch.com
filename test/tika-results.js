@@ -10,8 +10,6 @@ var app = require('../app.js');
 var config = require('../config/configuration.js');
 
 describe('Test tika results', function() {
-
-
   it('returns the correct informations', function(done) {
     //WARNING.
     // Is this test timeouting? This is due to should conditions being done beyond the standard event loop, and not properly bubbled up to Mocha.
@@ -31,7 +29,7 @@ describe('Test tika results', function() {
 
     server.post('/result', function(req, res, next) {
       // Uncomment on test timeout
-      // console.log(req.params);
+      //console.log(req.params);
       req.params.metadatas.should.have.property('raw');
       req.params.metadatas.should.have.property('html');
       req.params.metadatas.should.have.property('content-encoding', 'ISO-8859-1');
