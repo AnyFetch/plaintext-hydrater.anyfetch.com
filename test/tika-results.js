@@ -19,7 +19,7 @@ describe('Test tika results', function() {
         res.writeHead(200, {'Content-Type': 'text/plain'});
         return res.end(fs.readFileSync(__filename))
       } else {
-        //console.log(req);
+        console.log("PARAMS", req.param);
         req.params.metadatas.should.have.property('raw');
         req.params.metadatas.should.have.property('html');
         req.params.metadatas.should.have.property('content-encoding');
