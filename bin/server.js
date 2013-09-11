@@ -7,7 +7,5 @@ var configuration = require("../config/configuration.js");
 var server = require('../app.js');
 
 // Start the server
-server.listen(configuration.port, function() {
-  'use strict';
-  console.log("Tika hydrater started at " + server.url);
-});
+var spawner = require('sspawn')(server, configuration.port);
+spawner.start();
