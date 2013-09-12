@@ -2,8 +2,11 @@
 
 // Load configuration and initialize server
 var restify = require('restify');
+var async = require('async');
+
 var configuration = require('./config/configuration.js');
-var lib = require("./lib/hydrater-tika");
+var lib = require('./lib/hydrater-tika');
+
 var handlers = lib.handlers;
 var server = restify.createServer();
 
@@ -13,8 +16,10 @@ server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
 
+server.queue = async.queue(lib.helpers.hydrate, configuration.concurrency);
+
 // Load routes
-require("./config/routes.js")(server, handlers);
+require('./config/routes.js')(server, handlers);
 
 // Expose the server
 module.exports = server;
