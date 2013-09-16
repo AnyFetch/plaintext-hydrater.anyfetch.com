@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "node ./bin/server",
-    "test": "NODE_ENV=test mocha -R spec -t 60000 test/ test/test-*/* -g returns",
+    "test": "NODE_ENV=test mocha -R spec -t 60000 test/ test/test-*/*",
     "lint": "jshint lib/ test/ config/ bin/"
   },
   "main": "./lib/tika-hydrater",
