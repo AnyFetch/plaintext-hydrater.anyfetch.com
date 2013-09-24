@@ -27,7 +27,7 @@ describe('Test tika results', function() {
 
     server.patch('/result', function(req, res, next) {
       // Uncomment on test timeout
-      //console.log(req.params);
+      console.log(req.params);
       req.params.metadatas.should.have.property('raw');
       req.params.metadatas.should.have.property('html');
       req.params.metadatas.should.have.property('content-encoding', 'ISO-8859-1');

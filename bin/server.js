@@ -3,9 +3,9 @@
 // Launch a node app
 
 // Load configuration
-var configuration = require("../config/configuration.js");
+var config = require("../config/configuration.js");
 var server = require('../app.js');
 
 // Start the server
-var spawner = require('sspawn')(server, {port: configuration.port});
+var spawner = require('sspawn')(server, {port: config.port, workers: config.workers});
 spawner.start();
