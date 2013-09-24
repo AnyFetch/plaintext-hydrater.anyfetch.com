@@ -20,7 +20,7 @@ if(node_env === "production") {
 module.exports = {
   env: node_env,
   port: process.env.PORT || default_port,
-  workers: process.env.WORKERS || 2;
+  workers: process.env.WORKERS || 2,
 
   tika_version: process.env.TIKA_VERSION || default_tika_version,
   tika_path: process.env.TIKA_PATH || default_tika_path,
