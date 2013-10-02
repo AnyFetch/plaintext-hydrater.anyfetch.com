@@ -28,6 +28,7 @@
   "forin"         : false,
   "funcscope"     : false,
   "globalstrict"  : false,
+  "quotmark"      : false,
   "iterator"      : false,
   "lastsemic"     : false,
   "laxbreak"      : false,
