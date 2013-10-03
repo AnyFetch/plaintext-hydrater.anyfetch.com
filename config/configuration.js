@@ -9,8 +9,8 @@ var default_port = 8000;
 var default_tika_version = "1.4";
 var default_tika_path = "/etc/tika-" + default_tika_version + "/tika-app-" + default_tika_version + ".jar";
 
-// Number of tika instance to run simultaneously
-var default_concurrency = 2;
+// Number of tika instance to run simultaneously per cluster
+var default_concurrency = 1;
 
 if(node_env === "production") {
   default_port = 80;
