@@ -8,15 +8,20 @@ var tika = require('../lib/hydrater-tika');
 
 describe('Test tika results', function() {
   it('returns the correct informations', function(done) {
-    tika(__filename, function(err, results) {
+    var document = {
+      metadatas: {}
+    };
+
+    tika(__filename, document, function(err, document) {
       if(err) {
         throw err;
       }
 
-      results.should.have.property('content-encoding', 'ISO-8859-1');
+      document.should.have.property('metadatas');
+      document.metadatas.should.have.property('content-encoding', 'ISO-8859-1');
 
       // Tika adds a trailing "\n"
-      results.should.have.property('raw', fs.readFileSync(__filename).toString() + "\n");
+      document.metadatas.should.have.property('raw', fs.readFileSync(__filename).toString() + "\n");
 
       done();
     });
