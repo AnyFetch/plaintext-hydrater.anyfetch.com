@@ -16,9 +16,14 @@ if(node_env === "production") {
   default_port = 80;
 }
 
+if(!process.env.HYDRATER_URL) {
+  console.log("HYDRATER_URL not specified. Won't work.");
+}
+
 // Exports configuration
 module.exports = {
   env: node_env,
+  hydrater_url: process.env.HYDRATER_URL,
   port: process.env.PORT || default_port,
   workers: process.env.WORKERS || 2,
 
