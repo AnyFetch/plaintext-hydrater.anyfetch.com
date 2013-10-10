@@ -1,0 +1,11 @@
+language: node_js
+
+node_js:
+  - "0.10"
+
+before_script:
+  - "npm install --dev"
+  - "sudo mkdir /etc/tika-1.4"
+  - "sudo wget -O /etc/tika-1.4/tika-app-1.4.jar http://repo1.maven.org/maven2/org/apache/tika/tika-app/1.4/tika-app-1.4.jar"
+
+script: "npm test"
