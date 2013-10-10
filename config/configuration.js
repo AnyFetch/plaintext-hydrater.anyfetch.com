@@ -23,7 +23,7 @@ if(!process.env.HYDRATER_URL) {
 // Exports configuration
 module.exports = {
   env: node_env,
-  url: process.env.HYDRATER_URL,
+  hydrater_url: process.env.HYDRATER_URL,
   port: process.env.PORT || default_port,
   workers: process.env.WORKERS || 2,
 
