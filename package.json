@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "node ./bin/server",
-    "test": "NODE_ENV=test mocha -R spec -t 60000 test/ test/test-*/*",
+    "test": "NODE_ENV=test mocha -R spec -t 10000 test/ test/test-*/*",
     "lint": "jshint lib/ test/ config/ bin/"
   },
   "main": "./lib/tika-hydrater",
@@ -34,7 +34,8 @@
     "async": "0.2.x",
     "restify": "2.6.x",
     "request": "2.26.x",
-    "sspawn": "0.1.1"
+    "sspawn": "0.1.1",
+    "cluestr-file-hydrater": "x.x.x"
   },
   "devDependencies": {
     "mocha": "1.11.x",

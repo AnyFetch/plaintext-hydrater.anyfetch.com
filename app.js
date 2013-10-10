@@ -1,25 +1,18 @@
 'use strict';
 
 // Load configuration and initialize server
-var restify = require('restify');
-var async = require('async');
+var cluestrFileHydrater = require('cluestr-file-hydrater');
 
 var configuration = require('./config/configuration.js');
-var lib = require('./lib/hydrater-tika');
+var tika = require('./lib/hydrater-tika');
 
-var handlers = lib.handlers;
-var server = restify.createServer();
+var serverConfig = {
+  concurrency: configuration.concurrency,
+  hydrater_url: configuration.hydrater_url,
+  hydrater_function: tika
+};
 
-
-// Middleware Goes Here
-server.use(restify.acceptParser(server.acceptable));
-server.use(restify.queryParser());
-server.use(restify.bodyParser());
-
-server.queue = async.queue(lib.helpers.hydrate, configuration.concurrency);
-
-// Load routes
-require('./config/routes.js')(server, handlers);
+var server = cluestrFileHydrater.createServer(serverConfig);
 
 // Expose the server
 module.exports = server;
