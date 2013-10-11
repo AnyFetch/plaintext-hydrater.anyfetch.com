@@ -8,7 +8,6 @@ var tika = require('./lib/hydrater-tika');
 
 var serverConfig = {
   concurrency: config.concurrency,
-  hydrater_url: config.hydrater_url,
   hydrater_function: tika
 };
 
