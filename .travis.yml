@@ -8,6 +8,6 @@ install:
   - "sudo wget -O /etc/tika-1.4/tika-app-1.4.jar http://repo1.maven.org/maven2/org/apache/tika/tika-app/1.4/tika-app-1.4.jar"
 
 before_script:
-  - "npm install --dev"
+  - "npm install --dev --loglevel silent"
 
 script: "npm test"
