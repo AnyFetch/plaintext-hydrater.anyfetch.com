@@ -36,7 +36,6 @@
     "cluestr-file-hydrater": "x.x.x"
   },
   "devDependencies": {
-    "request": "2.26.x",
     "mocha": "1.11.x",
     "should": "1.2.x",
     "supertest": "0.7.x",
