@@ -1,4 +1,4 @@
-# Tika 1.4 Cluestr Hydrater
+# Tika Cluestr Hydrater
 > Visit http://cluestr.com for details about Cluestr.
 
 Cluestr Hydrater for generic files
