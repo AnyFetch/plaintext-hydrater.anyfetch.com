@@ -9,7 +9,8 @@ var tika = require('../lib/hydrater-tika');
 describe('Test tika results', function() {
   it('returns the correct informations', function(done) {
     var document = {
-      metadatas: {}
+      metadatas: {},
+      datas: {}
     };
 
     tika(__filename, document, function(err, document) {
@@ -18,6 +19,7 @@ describe('Test tika results', function() {
       }
 
       document.should.have.property('metadatas');
+      document.should.have.property('datas').with.keys('html');
       document.should.have.property('binary_document_type', "document");
       document.metadatas.should.have.property('content-encoding', 'ISO-8859-1');
 
