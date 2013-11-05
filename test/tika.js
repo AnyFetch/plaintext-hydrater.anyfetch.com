@@ -24,7 +24,7 @@ describe('Test tika results', function() {
       document.metadatas.should.have.property('content-encoding', 'ISO-8859-1');
 
       // Tika adds a trailing "\n"
-      document.metadatas.should.have.property('raw', fs.readFileSync(__filename).toString() + "\n");
+      document.metadatas.should.have.property('text', fs.readFileSync(__filename).toString() + "\n");
 
       done();
     });
