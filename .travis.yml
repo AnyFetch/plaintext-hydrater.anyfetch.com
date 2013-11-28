@@ -14,5 +14,5 @@ deploy:
   api_key:
     secure: co9z7le8amx0W3uXdxyneh6uZbw6dHY15WuDSWqaVoxovdvb1BYz+3UOGHVTru5jKKOmVpuqogStuWRm3JF9SqXbtuDJOZ3qhwX+Y7y/169mWboxu8zGWGF90P7xT+pwfVCiO5yKXxbREI/PrSpCe0DNNSJvlzRRqAApSPSP3dE=
   run:
-    - sudo mkdir /etc/tika-1.4
-    - sudo wget -O /etc/tika-1.4/tika-app-1.4.jar http://repo1.maven.org/maven2/org/apache/tika/tika-app/1.4/tika-app-1.4.jar
+    - mkdir /etc/tika-1.4
+    - wget -O /etc/tika-1.4/tika-app-1.4.jar http://repo1.maven.org/maven2/org/apache/tika/tika-app/1.4/tika-app-1.4.jar
