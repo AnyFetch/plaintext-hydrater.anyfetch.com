@@ -20,7 +20,7 @@ describe('Test tika results', function() {
 
       document.should.have.property('metadatas');
       document.should.have.property('datas').with.keys('html');
-      document.should.have.property('binary_document_type', "document");
+      document.should.have.property('document_type', "document");
       document.metadatas.should.have.property('content-encoding', 'ISO-8859-1');
 
       // Tika adds a trailing "\n"
@@ -43,7 +43,7 @@ describe('Test tika results', function() {
 
       document.should.have.property('metadatas');
       document.should.have.property('datas').eql({});
-      document.should.not.have.property('binary_document_type');
+      document.should.not.have.property('document_type');
       document.metadatas.should.have.property('content-type', 'image/png');
 
       done();
