@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "-----> Install Apache Tika"
+
 # Set tika vars
 export TIKA_VERSION="1.4"
 export TIKA_PATH="$HOME/vendor/bin/tika-$TIKA_VERSION.jar"
