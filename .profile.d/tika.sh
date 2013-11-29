@@ -9,4 +9,4 @@ export TIKA_URL="http://repo1.maven.org/maven2/org/apache/tika/tika-app/$TIKA_VE
 export TIKA_CONCURRENCY=2
 
 # Download tika
-wget -O $TIKA_PATH $TIKA_URL
+curl $TIKA_URL > $TIKA_PATH
