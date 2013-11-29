@@ -6,7 +6,7 @@ install:
   - npm install
 before_script:
   - npm install --dev
-script: npm test
+script: TIKA_VERSION=$TIKA_VERSION npm test
 deploy:
   provider: heroku
   app: anyfetch-hydrater-tika
