@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - '0.10'
 install:
-  - TIKA_DIR=/etc/tika-1.4 sh .profile.d/tika.sh
+  - TIKA_DIR=/etc/tika-1.4 SUDO=sudo sh .profile.d/tika.sh
   - npm install
 before_script:
   - npm install --dev
