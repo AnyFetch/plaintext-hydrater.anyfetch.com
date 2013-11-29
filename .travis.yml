@@ -4,8 +4,6 @@ node_js:
 install:
   - sudo TIKA_DIR=/etc/tika-1.4 sh .profile.d/tika.sh
   - npm install
-before_script:
-  - npm install --dev
 script: npm test
 deploy:
   provider: heroku
