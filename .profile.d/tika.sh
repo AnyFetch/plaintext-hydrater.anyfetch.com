@@ -9,5 +9,6 @@ export TIKA_URL="http://repo1.maven.org/maven2/org/apache/tika/tika-app/$TIKA_VE
 export TIKA_CONCURRENCY=2
 
 # Download tika
+echo "... to TIKA_PATH=$TIKA_PATH"
 mkdir -p $HOME/vendor/bin
-curl $TIKA_URL > $TIKA_PATH
+curl $TIKA_URL > $TIKA_PATH &2> /dev/null
