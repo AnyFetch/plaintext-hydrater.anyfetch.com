@@ -12,5 +12,5 @@ SUDO=${SUDO:-}
 
 # Download tika
 echo "... to TIKA_PATH=$TIKA_PATH"
-$SUDO mkdir -p $TIKA_DIR
-$SUDO curl $TIKA_URL > $TIKA_PATH &2> /dev/null
+`$SUDO mkdir -p $TIKA_DIR`
+`$SUDO curl $TIKA_URL > $TIKA_PATH &2> /dev/null`
