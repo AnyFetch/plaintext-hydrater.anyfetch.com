@@ -3,7 +3,7 @@
 
 $script = <<SCRIPT
   export TIKA_DIR=/etc/tika-1.4
-  run-parts .profile.d
+  run-parts .profile.d --regex '.+'
 SCRIPT
 
 Vagrant.configure("2") do |config|

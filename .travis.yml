@@ -3,7 +3,7 @@ node_js:
   - '0.10'
 before_install:
   - export TIKA_DIR=/etc/tika-1.4
-  - run-parts .profile.d
+  - run-parts .profile.d --regex '.+'
 install:
   - npm install
 script:
