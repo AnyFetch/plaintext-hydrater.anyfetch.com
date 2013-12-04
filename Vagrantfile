@@ -1,12 +1,9 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# TODO: use our recipe for tika
 $script = <<SCRIPT
-cd /vagrant; npm install
-mkdir /etc/tika-1.4
-wget -O /etc/tika-1.4/tika-app-1.4.jar http://repo1.maven.org/maven2/org/apache/tika/tika-app/1.4/tika-app-1.4.jar
-echo Tika rocks like the Rolling Stones rock the stage ...
+  export TIKA_DIR=/etc/tika-1.4
+  run-parts .profile.d
 SCRIPT
 
 Vagrant.configure("2") do |config|
