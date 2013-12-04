@@ -2,7 +2,8 @@
 # vi: set ft=ruby :
 
 $script = <<SCRIPT
-  export TIKA_DIR=/etc/tika-1.4
+  export TIKA_DIR=tika-1.4
+  mkdir $TIKA_DIR
   run-parts .profile.d --regex '.+'
 SCRIPT
 
