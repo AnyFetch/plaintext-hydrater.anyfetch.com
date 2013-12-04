@@ -9,7 +9,6 @@ env:
 before_install:
   - mkdir $TIKA_DIR
   - run-parts .profile.d --regex '.+'
-  - export TIKA
 install:
   - npm install
 script:
