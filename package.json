@@ -20,7 +20,7 @@
     "test": "NODE_ENV=test mocha -R spec -t 10000 test/ test/test-*/*",
     "lint": "jshint lib/ test/ config/ bin/"
   },
-  "main": "./lib/tika-hydrater",
+  "main": "./lib/",
   "repository": {
     "type": "git",
     "url": "https://github.com/Papiel/papiel_core"

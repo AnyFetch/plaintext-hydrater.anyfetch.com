@@ -3,7 +3,7 @@
 require('should');
 var fs = require('fs');
 
-var tika = require('../lib/hydrater-tika');
+var tika = require('../lib/');
 
 
 describe('Test tika results', function() {
