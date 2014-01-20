@@ -1,7 +1,6 @@
 'use strict';
 
 require('should');
-var fs = require('fs');
 
 var tika = require('../lib/');
 
@@ -13,18 +12,18 @@ describe('Test tika results', function() {
       datas: {}
     };
 
-    tika(__filename, document, function(err, document) {
+    tika(__dirname + '/samples/text.rtf', document, function(err, document) {
       if(err) {
         throw err;
       }
 
       document.should.have.property('metadatas');
-      document.should.have.property('datas').with.keys('html');
+      document.should.have.property('datas');
+      document.datas.should.have.property('html', '<p>This is  some <b>bold</b> text.</p>\n');
       document.should.have.property('document_type', "document");
-      document.metadatas.should.have.property('content-encoding', 'ISO-8859-1');
 
       // Tika adds a trailing "\n"
-      document.metadatas.should.have.property('text', fs.readFileSync(__filename).toString() + "\n");
+      document.metadatas.should.have.property('text', "This is some bold text.\n");
 
       done();
     });
