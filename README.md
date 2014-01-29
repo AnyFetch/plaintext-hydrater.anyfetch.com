@@ -1,4 +1,4 @@
-# Tika anyFetch Hydrater
+# Plaintext anyFetch Hydrater
 > Visit http://anyfetch.com for details about anyFetch.
 
 anyFetch Hydrater for generic files
