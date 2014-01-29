@@ -1,10 +1,10 @@
-# Tika Cluestr Hydrater
-> Visit http://cluestr.com for details about Cluestr.
+# Tika anyFetch Hydrater
+> Visit http://anyfetch.com for details about anyFetch.
 
-Cluestr Hydrater for generic files
+anyFetch Hydrater for generic files
 
 # How to install?
-Git clone, then
+Git clone, then:
 ```sh
 sudo TIKA_DIR=/etc/tika-1.4 sh .profile.d/tika.sh
 npm install

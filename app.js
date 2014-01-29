@@ -1,7 +1,7 @@
 'use strict';
 
 // Load configuration and initialize server
-var cluestrFileHydrater = require('cluestr-file-hydrater');
+var anyfetchFileHydrater = require('anyfetch-file-hydrater');
 
 var config = require('./config/configuration.js');
 var tika = require('./lib/');
@@ -10,7 +10,7 @@ var serverConfig = {
   hydrater_function: tika
 };
 
-var server = cluestrFileHydrater.createServer(serverConfig);
+var server = anyfetchFileHydrater.createServer(serverConfig);
 
 // Expose the server
 module.exports = server;
