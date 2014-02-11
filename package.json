@@ -33,8 +33,7 @@
   "dependencies": {
     "async": "0.2.x",
     "anyfetch-file-hydrater": "0.2.x",
-    "newrelic": "1.x.x",
-    "concurix-monitor": "~0.6.2"
+    "newrelic": "1.x.x"
   },
   "devDependencies": {
     "mocha": "1.17.x",

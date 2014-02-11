@@ -4,11 +4,6 @@
 if(process.env.NEW_RELIC_LICENSE_KEY) {
   require('newrelic');
 }
-// Load concurix
-var cx = require('concurix-monitor')({
-   accountKey: "d69d6621ebf94a23ad2d4ff943f8cb26"
-});
-cx.start();
 
 // Load configuration
 var config = require("../config/configuration.js");
