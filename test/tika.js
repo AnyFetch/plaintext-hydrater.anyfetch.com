@@ -49,20 +49,4 @@ describe('Test tika results', function() {
     });
   });
 
-  it('microsoft', function(done) {
-    var document = {
-      metadatas: {},
-      datas: {}
-    };
-
-    tika(__dirname + '/samples/cv2.pdf', document, function(err, document) {
-      if(err) {
-        throw err;
-      }
-      require('fs').writeFileSync(__dirname + '/samples/tika.txt', JSON.stringify(document));
-
-      done();
-    });
-  });
-
 });
