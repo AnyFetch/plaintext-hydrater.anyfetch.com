@@ -49,4 +49,20 @@ describe('Test tika results', function() {
     });
   });
 
+  it('tika', function(done) {
+    var document = {
+      metadatas: {},
+      datas: {}
+    };
+
+    tika(__dirname + '/samples/tika.doc', document, function(err, document) {
+      if(err) {
+        throw err;
+      }
+
+      require('fs').writeFileSync('tika.json', JSON.stringify(document));
+      done();
+    });
+  });
+
 });
