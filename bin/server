@@ -1,5 +1,13 @@
 #!/bin/env node
 'use strict';
+
+
+require('nodetime').profile({
+  accountKey: '44b440842ce0a2541dd964a7d85646287731af15',
+  appName: 'tika'
+});
+
+
 // New Relic RPM
 if(process.env.NEW_RELIC_LICENSE_KEY) {
   require('newrelic');

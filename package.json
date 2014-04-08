@@ -33,7 +33,8 @@
   "dependencies": {
     "async": "0.2.x",
     "anyfetch-file-hydrater": ">=0.2.6",
-    "newrelic": "1.x.x"
+    "newrelic": "1.x.x",
+    "nodetime": "^0.8.15"
   },
   "devDependencies": {
     "mocha": "1.17.x",
