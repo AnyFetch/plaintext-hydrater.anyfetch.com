@@ -7,6 +7,12 @@ require('nodetime').profile({
   appName: 'tika'
 });
 
+var memwatch = require('memwatch');
+memwatch.on('leak', function(info) {
+  console.log("LEAAAAAAAAAAAAAAAAAAAAAAAAAAAAK");
+  conolse.log(info);
+});
+
 
 // New Relic RPM
 if(process.env.NEW_RELIC_LICENSE_KEY) {
