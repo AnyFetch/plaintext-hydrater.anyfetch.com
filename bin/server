@@ -2,18 +2,6 @@
 'use strict';
 
 
-require('nodetime').profile({
-  accountKey: '44b440842ce0a2541dd964a7d85646287731af15',
-  appName: 'tika'
-});
-
-var memwatch = require('memwatch');
-memwatch.on('leak', function(info) {
-  console.log("LEAAAAAAAAAAAAAAAAAAAAAAAAAAAAK");
-  conolse.log(info);
-});
-
-
 // New Relic RPM
 if(process.env.NEW_RELIC_LICENSE_KEY) {
   require('newrelic');
