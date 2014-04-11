@@ -1,0 +1,1 @@
+web: node ./bin/server --incremental_marking --never-compact --max_new_space_size=16384 --max_old_space_size=400 --max_executable_size=450

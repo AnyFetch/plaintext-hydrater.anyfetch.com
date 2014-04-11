@@ -1,5 +1,7 @@
 #!/bin/env node
 'use strict';
+
+
 // New Relic RPM
 if(process.env.NEW_RELIC_LICENSE_KEY) {
   require('newrelic');
