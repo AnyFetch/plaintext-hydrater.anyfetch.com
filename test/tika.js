@@ -49,4 +49,20 @@ describe('Test tika results', function() {
     });
   });
 
+  it('should return an errored document', function(done) {
+    var document = {
+      metadatas: {},
+      datas: {}
+    };
+
+    tika(__dirname + '/samples/errored.tt', document, function(err, document) {
+      if(err) {
+        throw err;
+      }
+      document.should.have.property("hydrationErrored", true);
+      document.should.have.property("hydrationError");
+      done();
+    });
+  });
+
 });
