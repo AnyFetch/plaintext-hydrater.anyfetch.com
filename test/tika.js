@@ -59,8 +59,8 @@ describe('Test tika results', function() {
       if(err) {
         throw err;
       }
-      document.should.have.property("hydrationErrored", true);
-      document.should.have.property("hydrationError");
+      document.should.have.property("hydration_errored", true);
+      document.should.have.property("hydration_error");
       done();
     });
   });
