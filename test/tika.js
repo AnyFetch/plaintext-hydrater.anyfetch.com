@@ -19,7 +19,8 @@ describe('Test tika results', function() {
 
       document.should.have.property('metadatas');
       document.should.have.property('datas');
-      document.datas.should.have.property('html', '<p>This is  some <b>bold</b> text.</p>\n');
+      document.datas.should.have.property('html', '<p>This is some <b>bold</b> text.</p>\n');
+      document.datas.should.have.property('content-type', 'application/rtf');
       document.should.have.property('document_type', "document");
 
       // Tika adds a trailing "\n"
@@ -40,10 +41,10 @@ describe('Test tika results', function() {
         throw err;
       }
 
-      document.should.have.property('metadatas');
-      document.should.have.property('datas').eql({});
+      document.should.have.property('metadatas', {});
+      document.should.have.property('datas');
       document.should.not.have.property('document_type');
-      document.metadatas.should.have.property('content-type', 'image/png');
+      document.datas.should.have.property('content-type', 'image/png');
 
       done();
     });
