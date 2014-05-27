@@ -3,6 +3,7 @@
 require('should');
 
 var tika = require('../lib/');
+var anyfetchFileHydrater = require('anyfetch-file-hydrater');
 
 
 describe('Test tika results', function() {
@@ -12,12 +13,7 @@ describe('Test tika results', function() {
       datas: {}
     };
 
-    var changes = {
-      metadatas: {},
-      user_access: [],
-      actions: {},
-      datas: {}
-    };
+    var changes = anyfetchFileHydrater.defaultChanges();
 
     tika(__dirname + '/samples/text.rtf', document, changes, function(err, changes) {
       if(err) {
@@ -43,12 +39,7 @@ describe('Test tika results', function() {
       datas: {}
     };
 
-    var changes = {
-      metadatas: {},
-      user_access: [],
-      actions: {},
-      datas: {}
-    };
+    var changes = anyfetchFileHydrater.defaultChanges();
 
     tika(__dirname + '/samples/node.png', document, changes, function(err, changes) {
       if(err) {
@@ -70,12 +61,7 @@ describe('Test tika results', function() {
       datas: {}
     };
 
-    var changes = {
-      metadatas: {},
-      user_access: [],
-      actions: {},
-      datas: {}
-    };
+    var changes = anyfetchFileHydrater.defaultChanges();
 
     tika(__dirname + '/samples/errored.tt', document, changes, function(err, changes) {
       if(err) {
