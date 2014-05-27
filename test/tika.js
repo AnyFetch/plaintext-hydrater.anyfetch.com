@@ -12,19 +12,26 @@ describe('Test tika results', function() {
       datas: {}
     };
 
-    tika(__dirname + '/samples/text.rtf', document, function(err, document) {
+    var changes = {
+      metadatas: {},
+      user_access: [],
+      actions: {},
+      datas: {}
+    };
+
+    tika(__dirname + '/samples/text.rtf', document, changes, function(err, changes) {
       if(err) {
         throw err;
       }
 
-      document.should.have.property('metadatas');
-      document.should.have.property('datas');
-      document.datas.should.have.property('html', '<p>This is some <b>bold</b> text.</p>\n');
-      document.datas.should.have.property('content-type', 'application/rtf');
-      document.should.have.property('document_type', "document");
+      changes.should.have.property('metadatas');
+      changes.should.have.property('datas');
+      changes.datas.should.have.property('html', '<p>This is some <b>bold</b> text.</p>\n');
+      changes.datas.should.have.property('content-type', 'application/rtf');
+      changes.should.have.property('document_type', "document");
 
       // Tika adds a trailing "\n"
-      document.metadatas.should.have.property('text', "This is some bold text.\n");
+      changes.metadatas.should.have.property('text', "This is some bold text.\n");
 
       done();
     });
@@ -36,15 +43,22 @@ describe('Test tika results', function() {
       datas: {}
     };
 
-    tika(__dirname + '/samples/node.png', document, function(err, document) {
+    var changes = {
+      metadatas: {},
+      user_access: [],
+      actions: {},
+      datas: {}
+    };
+
+    tika(__dirname + '/samples/node.png', document, changes, function(err, changes) {
       if(err) {
         throw err;
       }
 
-      document.should.have.property('metadatas', {});
-      document.should.have.property('datas');
-      document.should.not.have.property('document_type');
-      document.datas.should.have.property('content-type', 'image/png');
+      changes.should.have.property('metadatas', {});
+      changes.should.have.property('datas');
+      changes.should.not.have.property('document_type');
+      changes.datas.should.have.property('content-type', 'image/png');
 
       done();
     });
@@ -56,12 +70,19 @@ describe('Test tika results', function() {
       datas: {}
     };
 
-    tika(__dirname + '/samples/errored.tt', document, function(err, document) {
+    var changes = {
+      metadatas: {},
+      user_access: [],
+      actions: {},
+      datas: {}
+    };
+
+    tika(__dirname + '/samples/errored.tt', document, changes, function(err, changes) {
       if(err) {
         throw err;
       }
-      document.should.have.property("hydration_errored", true);
-      document.should.have.property("hydration_error");
+      changes.should.have.property("hydration_errored", true);
+      changes.should.have.property("hydration_error");
       done();
     });
   });

@@ -31,8 +31,8 @@
     "tika"
   ],
   "dependencies": {
-    "async": "0.2.x",
-    "anyfetch-file-hydrater": ">=0.2.8",
+    "async": "0.9.x",
+    "anyfetch-file-hydrater": ">=0.2.9",
     "newrelic": "1.x.x"
   },
   "devDependencies": {
