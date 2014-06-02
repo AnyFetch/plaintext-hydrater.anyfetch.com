@@ -4,7 +4,7 @@ require('should');
 
 var tika = require('../lib/');
 var anyfetchFileHydrater = require('anyfetch-file-hydrater');
-
+var hydrationError = anyfetchFileHydrater.hydrationError;
 
 describe('Test tika results', function() {
   it('returns the correct informations for text file', function(done) {
@@ -63,13 +63,13 @@ describe('Test tika results', function() {
 
     var changes = anyfetchFileHydrater.defaultChanges();
 
-    tika(__dirname + '/samples/errored.tt', document, changes, function(err, changes) {
-      if(err) {
-        throw err;
+    tika(__dirname + '/samples/errored.tt', document, changes, function(err) {
+      if(err instanceof hydrationError) {
+        done();
       }
-      changes.should.have.property("hydration_errored", true);
-      changes.should.have.property("hydration_error");
-      done();
+      else {
+        done(new Error("invalid error"));
+      }
     });
   });
 
