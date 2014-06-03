@@ -9,8 +9,8 @@ var hydrationError = anyfetchFileHydrater.hydrationError;
 describe('Test tika results', function() {
   it('returns the correct informations for text file', function(done) {
     var document = {
-      metadatas: {},
-      datas: {}
+      metadata: {},
+      data: {}
     };
 
     var changes = anyfetchFileHydrater.defaultChanges();
@@ -20,14 +20,14 @@ describe('Test tika results', function() {
         throw err;
       }
 
-      changes.should.have.property('metadatas');
-      changes.should.have.property('datas');
-      changes.datas.should.have.property('html', '<p>This is some <b>bold</b> text.</p>\n');
-      changes.datas.should.have.property('content-type', 'application/rtf');
+      changes.should.have.property('metadata');
+      changes.should.have.property('data');
+      changes.data.should.have.property('html', '<p>This is some <b>bold</b> text.</p>\n');
+      changes.data.should.have.property('content-type', 'application/rtf');
       changes.should.have.property('document_type', "document");
 
       // Tika adds a trailing "\n"
-      changes.metadatas.should.have.property('text', "This is some bold text.\n");
+      changes.metadata.should.have.property('text', "This is some bold text.\n");
 
       done();
     });
@@ -35,8 +35,8 @@ describe('Test tika results', function() {
 
   it('returns the correct informations for binary file', function(done) {
     var document = {
-      metadatas: {},
-      datas: {}
+      metadata: {},
+      data: {}
     };
 
     var changes = anyfetchFileHydrater.defaultChanges();
@@ -46,10 +46,10 @@ describe('Test tika results', function() {
         throw err;
       }
 
-      changes.should.have.property('metadatas', {});
-      changes.should.have.property('datas');
+      changes.should.have.property('metadata', {});
+      changes.should.have.property('data');
       changes.should.not.have.property('document_type');
-      changes.datas.should.have.property('content-type', 'image/png');
+      changes.data.should.have.property('content-type', 'image/png');
 
       done();
     });
@@ -57,8 +57,8 @@ describe('Test tika results', function() {
 
   it('should return an errored document', function(done) {
     var document = {
-      metadatas: {},
-      datas: {}
+      metadata: {},
+      data: {}
     };
 
     var changes = anyfetchFileHydrater.defaultChanges();
