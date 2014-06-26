@@ -68,7 +68,7 @@ describe('Test tika results', function() {
         throw err;
       }
 
-      changes.should.have.property('data').not.containDeep("�");
+      changes.metadata.should.have.property('text', '\n');
       done();
     });
   });
