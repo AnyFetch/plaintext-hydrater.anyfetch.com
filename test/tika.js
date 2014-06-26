@@ -55,7 +55,7 @@ describe('Test tika results', function() {
     });
   });
 
-  it('returns the remove �', function(done) {
+  it('remove invalid characters �', function(done) {
     var document = {
       metadata: {},
       data: {}
