@@ -55,6 +55,24 @@ describe('Test tika results', function() {
     });
   });
 
+  it('remove invalid characters �', function(done) {
+    var document = {
+      metadata: {},
+      data: {}
+    };
+
+    var changes = anyfetchFileHydrater.defaultChanges();
+
+    tika(__dirname + '/samples/garbage.txt', document, changes, function(err, changes) {
+      if(err) {
+        throw err;
+      }
+
+      changes.metadata.should.have.property('text', '\n');
+      done();
+    });
+  });
+
   it('should return an errored document', function(done) {
     var document = {
       metadata: {},
