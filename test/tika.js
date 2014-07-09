@@ -3,8 +3,8 @@
 require('should');
 
 var tika = require('../lib/');
-var anyfetchFileHydrater = require('anyfetch-file-hydrater');
-var hydrationError = anyfetchFileHydrater.hydrationError;
+var anyfetchHydrater = require('anyfetch-hydrater');
+var hydrationError = anyfetchHydrater.hydrationError;
 
 describe('Test tika results', function() {
   it('returns the correct informations for text file', function(done) {
@@ -13,7 +13,7 @@ describe('Test tika results', function() {
       data: {}
     };
 
-    var changes = anyfetchFileHydrater.defaultChanges();
+    var changes = anyfetchHydrater.defaultChanges();
 
     tika(__dirname + '/samples/text.rtf', document, changes, function(err, changes) {
       if(err) {
@@ -39,7 +39,7 @@ describe('Test tika results', function() {
       data: {}
     };
 
-    var changes = anyfetchFileHydrater.defaultChanges();
+    var changes = anyfetchHydrater.defaultChanges();
 
     tika(__dirname + '/samples/node.png', document, changes, function(err, changes) {
       if(err) {
@@ -48,7 +48,6 @@ describe('Test tika results', function() {
 
       changes.should.have.property('metadata', {});
       changes.should.have.property('data');
-      changes.should.not.have.property('document_type');
       changes.data.should.have.property('content-type', 'image/png');
 
       done();
@@ -61,7 +60,7 @@ describe('Test tika results', function() {
       data: {}
     };
 
-    var changes = anyfetchFileHydrater.defaultChanges();
+    var changes = anyfetchHydrater.defaultChanges();
 
     tika(__dirname + '/samples/garbage.txt', document, changes, function(err, changes) {
       if(err) {
@@ -79,7 +78,7 @@ describe('Test tika results', function() {
       data: {}
     };
 
-    var changes = anyfetchFileHydrater.defaultChanges();
+    var changes = anyfetchHydrater.defaultChanges();
 
     tika(__dirname + '/samples/errored.tt', document, changes, function(err) {
       if(err instanceof hydrationError) {
