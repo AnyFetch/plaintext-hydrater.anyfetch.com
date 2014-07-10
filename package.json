@@ -32,7 +32,7 @@
   ],
   "dependencies": {
     "async": "0.9.x",
-    "anyfetch-hydrater": "^0.2.30"
+    "anyfetch-hydrater": "^0.3.0"
   },
   "devDependencies": {
     "mocha": "1.17.x",
