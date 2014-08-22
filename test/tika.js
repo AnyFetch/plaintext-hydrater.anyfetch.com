@@ -4,7 +4,7 @@ require('should');
 
 var tika = require('../lib/');
 var anyfetchHydrater = require('anyfetch-hydrater');
-var hydrationError = anyfetchHydrater.hydrationError;
+var HydrationError = anyfetchHydrater.HydrationError;
 
 describe('Test tika results', function() {
   it('returns the correct informations for text file', function(done) {
@@ -81,7 +81,7 @@ describe('Test tika results', function() {
     var changes = anyfetchHydrater.defaultChanges();
 
     tika(__dirname + '/samples/errored.tt', document, changes, function(err) {
-      if(err instanceof hydrationError) {
+      if(err instanceof HydrationError) {
         done();
       }
       else {
