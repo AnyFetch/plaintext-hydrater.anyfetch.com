@@ -31,9 +31,10 @@
     "tika"
   ],
   "dependencies": {
+    "anyfetch-hydrater": "^1.0.3",
     "async": "0.9.x",
-    "anyfetch-hydrater": "^0.3.7",
-    "heroku-self-ping": "~1.0.0"
+    "heroku-self-ping": "~1.1.1",
+    "html-entities": "^1.0.10"
   },
   "devDependencies": {
     "mocha": "1.20.x",
