@@ -80,7 +80,7 @@ describe('Test tika results', function() {
 
     var changes = anyfetchHydrater.defaultChanges();
 
-    tika(__dirname + '/samples/errored.tt', document, changes, function(err) {
+    tika(__dirname + '/samples/errored.doc', document, changes, function(err) {
       if(err instanceof HydrationError) {
         done();
       }
