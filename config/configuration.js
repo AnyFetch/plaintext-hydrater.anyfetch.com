@@ -2,26 +2,27 @@
  * @file Defines the hydrater settings.
  */
 
-// node_env can either be "development" or "production"
-var node_env = process.env.NODE_ENV || "development";
-var default_port = 8000;
+// nodeEnv can either be "development" or "production"
+var nodeEnv = process.env.NODE_ENV || "development";
+var defaultPort = 8000;
 
-var default_tika_version = "1.6";
-var default_tika_path = "/etc/tika-" + default_tika_version + "/tika-app-" + default_tika_version + ".jar";
+var defaultTikaVersion = "1.6";
+var defaultTikaPath = "/etc/tika-" + defaultTikaVersion + "/tika-app-" + defaultTikaVersion + ".jar";
 
 // Number of tika instance to run simultaneously per process
-var default_concurrency = 2;
+var defaultConcurrency = 2;
 
-if(node_env === "production") {
-  default_port = 80;
+if(nodeEnv === "production") {
+  defaultPort = 80;
 }
 
 // Exports configuration
 module.exports = {
-  env: node_env,
-  port: process.env.PORT || default_port,
+  env: nodeEnv,
+  port: process.env.PORT || defaultPort,
 
-  tika_version: process.env.TIKA_VERSION || default_tika_version,
-  tika_path: process.env.TIKA_PATH || default_tika_path,
-  concurrency: process.env.TIKA_CONCURRENCY || default_concurrency
+  tika_version: process.env.TIKA_VERSION || defaultTikaVersion,
+  tika_path: process.env.TIKA_PATH || defaultTikaPath,
+  concurrency: process.env.TIKA_CONCURRENCY || defaultConcurrency,
+  redisUrl: process.env.REDIS_URL
 };
