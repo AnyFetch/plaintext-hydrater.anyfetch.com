@@ -24,5 +24,6 @@ module.exports = {
   tika_version: process.env.TIKA_VERSION || defaultTikaVersion,
   tika_path: process.env.TIKA_PATH || defaultTikaPath,
   concurrency: process.env.TIKA_CONCURRENCY || defaultConcurrency,
-  redisUrl: process.env.REDIS_URL
+  redisUrl: process.env.REDIS_URL,
+  appName: process.env.APP_NAME || "plaintext-hydrater"
 };
