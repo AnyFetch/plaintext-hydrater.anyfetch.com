@@ -25,5 +25,11 @@ module.exports = {
   tika_path: process.env.TIKA_PATH || defaultTikaPath,
   concurrency: process.env.TIKA_CONCURRENCY || defaultConcurrency,
   redisUrl: process.env.REDIS_URL,
-  appName: process.env.APP_NAME || "plaintext-hydrater"
+  appName: process.env.APP_NAME || "plaintext-hydrater",
+
+  opbeat: {
+    organizationId: process.env.OPBEAT_ORGANIZATION_ID,
+    appId: process.env.OPBEAT_APP_ID,
+    secretToken: process.env.OPBEAT_SECRET_TOKEN
+  }
 };
