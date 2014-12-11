@@ -5,7 +5,6 @@
 TIKA_VERSION=${TIKA_VERSION:-"1.6"}
 TIKA_DIR=${TIKA_DIR:-"$HOME/vendor/bin"}
 
-export TIKA_CONCURRENCY=${TIKA_CONCURRENCY:-2}
 export TIKA_PATH=${TIKA_PATH:-"$TIKA_DIR/tika-app-$TIKA_VERSION.jar"}
 
 if [ ! -f $TIKA_PATH ]; then
