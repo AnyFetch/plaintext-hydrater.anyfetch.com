@@ -7,7 +7,13 @@ var nodeEnv = process.env.NODE_ENV || "development";
 var defaultPort = 8000;
 
 var defaultTikaVersion = "1.6";
-var defaultTikaPath = "/etc/tika-" + defaultTikaVersion + "/tika-app-" + defaultTikaVersion + ".jar";
+var defaultTikaPath;
+if(process.env.TIKA_DIR) {
+  defaultTikaPath = process.env.TIKA_DIR + "/tika-app-" + defaultTikaVersion + ".jar";
+}
+else {
+  defaultTikaPath = "/etc/tika-" + defaultTikaVersion + "/tika-app-" + defaultTikaVersion + ".jar";
+}
 
 // Number of tika instance to run simultaneously per process
 var defaultConcurrency = 2;
