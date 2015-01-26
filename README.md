@@ -12,4 +12,4 @@ npm install
 
 You can now `npm test`.
 
-Support: `support@anyfetch.com`.
+Support: support@anyfetch.com
