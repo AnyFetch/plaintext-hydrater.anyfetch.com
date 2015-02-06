@@ -22,7 +22,7 @@ describe('Test tika results', function() {
 
       changes.should.have.property('metadata');
       changes.should.have.property('data');
-      changes.data.should.have.property('html', '<p>This is some <b>bold</b> text <3.</p>\n');
+      changes.data.should.have.property('html', '<p>This is some <b>bold</b> text &lt;3.</p>\n');
       changes.data.should.have.property('content_type', 'application/rtf');
       changes.should.have.property('document_type', "document");
 
