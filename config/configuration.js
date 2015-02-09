@@ -6,7 +6,7 @@
 var nodeEnv = process.env.NODE_ENV || "development";
 var defaultPort = 8000;
 
-var defaultTikaVersion = "1.6";
+var defaultTikaVersion = "1.7";
 var defaultTikaPath;
 if(process.env.TIKA_DIR) {
   defaultTikaPath = process.env.TIKA_DIR + "/tika-app-" + defaultTikaVersion + ".jar";
