@@ -67,7 +67,7 @@ describe('Test tika results', function() {
         throw err;
       }
 
-      changes.metadata.should.have.property('text', '\n');
+      changes.metadata.should.have.property('text', 'lol a word is playing hide and seek\n');
       done();
     });
   });
