@@ -2,6 +2,7 @@
 
 require('should');
 
+var fs = require('fs');
 var tika = require('../lib/');
 var anyfetchHydrater = require('anyfetch-hydrater');
 var HydrationError = anyfetchHydrater.HydrationError;
@@ -87,6 +88,29 @@ describe('Test tika results', function() {
       else {
         done(new Error("invalid error"));
       }
+    });
+  });
+
+  it('should not return an errored document with too big file', function(done) {
+    var document = {
+      metadata: {},
+      data: {}
+    };
+
+    var maxObjectSize = 8500000;
+    var pathBigFile = '/tmp/test-plaintext-big-file';
+    // Create a big file
+    var content = fs.readFileSync(__filename);
+
+    while(content.length <= maxObjectSize) {
+      content += content;
+    }
+    fs.writeFileSync('/tmp/test-plaintext-big-file', content);
+
+    var changes = anyfetchHydrater.defaultChanges();
+
+    tika(pathBigFile, document, changes, function(err) {
+      done(err);
     });
   });
 
