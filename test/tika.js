@@ -91,7 +91,7 @@ describe('Test tika results', function() {
     });
   });
 
-  it('should not return an errored document with too big file', function(done) {
+  it('should not return an errored document with file too big', function(done) {
     var document = {
       metadata: {},
       data: {}
@@ -109,7 +109,10 @@ describe('Test tika results', function() {
 
     var changes = anyfetchHydrater.defaultChanges();
 
+    // A file too big is not an error, it is what we want. If a file is this big, we send an empty doc instead
     tika(pathBigFile, document, changes, function(err) {
+      changes.data.should.eql({});
+      changes.metadata.should.eql({});
       done(err);
     });
   });
