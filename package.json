@@ -34,13 +34,13 @@
     "anyfetch-hydrater": "^2.0.8",
     "async": "0.9.x",
     "heroku-self-ping": "~1.1.1",
-    "html-entities": "^1.1.1"
+    "html-entities": "^1.1.2"
   },
   "devDependencies": {
-    "mocha": "^2.0.1",
-    "should": "^4.3.1",
+    "mocha": "^2.1.0",
+    "should": "^5.0.1",
     "supertest": "^0.15.0",
-    "jshint": "2.5.x"
+    "jshint": "2.6.x"
   },
   "licence": "MIT",
   "engines": {
