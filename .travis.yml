@@ -4,6 +4,6 @@ node_js:
 services:
   - redis-server
 install:
-  - sudo TIKA_DIR=/etc/tika-1.7 sh .profile.d/tika.sh
+  - sudo TIKA_DIR=/etc/tika-1.9 sh .profile.d/tika.sh
   - npm install
 script: npm test
